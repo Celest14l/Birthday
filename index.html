@@ -23,7 +23,7 @@
       width: 100%;
       max-width: 400px;
       padding: 2rem;
-      background-color: rgba(255, 192, 203, 0.8); /* Soft pink background */
+      background-color: rgba(255, 192, 203, 0.8);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       border-radius: 0.5rem;
       text-align: center;
@@ -39,18 +39,6 @@
       font-size: 1rem;
       margin-bottom: 1rem;
     }
-    .icon-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-    .icon {
-      height: 2.5rem;
-      width: 2.5rem;
-      margin: 0 0.5rem;
-      color: #ff1493;
-    }
     .button {
       padding: 0.5rem 1rem;
       font-size: 1rem;
@@ -64,16 +52,10 @@
     .button:hover {
       background-color: #e75480;
     }
-    .footer {
-      margin-top: 1rem;
-      font-size: 0.875rem;
-    }
-    .footer p {
-      margin: 0.25rem 0;
-    }
-    .footer .name {
-      color: #ff1493;
-      font-weight: bold;
+    /* Hide YouTube video initially */
+    #ytVideo {
+      display: none;
+      margin-top: 15px;
     }
   </style>
 </head>
@@ -81,17 +63,18 @@
   <div class="card">
     <div class="card-header">
       <div class="card-title" id="greeting">Dear Aditi! </div>
-      <div class="card-description">Three years of friendship and countless memories! Thank you from the bottom of my heart for always understanding me when no one else could.<br> <br>You're the smartest, most amazing person I know, and I truly appreciate you. It's rare to find someone like you, and I'm grateful every day.
-<br><br>
-        Hope you get all the happiness you deserve & have the best day ever! 💖🎂🎁</div>
+      <div class="card-description">
+        Three years of friendship and countless memories! Thank you from the bottom of my heart for always understanding me when no one else could.<br><br>
+        You're the smartest, most amazing person I know, and I truly appreciate you. It's rare to find someone like you, and I'm grateful every day.
+        <br><br>
+        Hope you get all the happiness you deserve & have the best day ever! 💖🎂🎁
+      </div>
     </div>
     <div class="card-content">
-      <div class="icon-container">
-        <img src="https://imgs.search.brave.com/NHt50D7CJ9wnZkfrgkC89qshOtr9L8WF5B9qqX1UjvM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvMjMvQW55/YS1Gb3JnZXItUE5H/LUhELUlzb2xhdGVk/LnBuZw" alt="Anya Smiling" class="icon">
-        <img src="https://imgs.search.brave.com/qqkyCXizbklQqpm4Ic4OE8vsVTppO-z5Qj5hSP75PMc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvMjMvQW55/YS1Gb3JnZXItUE5H/LVBpYy5wbmc" alt="Anya Excited" class="icon">
-        <img src="https://imgs.search.brave.com/bXExL0DPo_lVxem2OtTbCTBfDu5j-ItjPcemsf0JfV4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvMjMvQW55/YS1Gb3JnZXItUE5H/LUlzb2xhdGVkLUZp/bGUucG5n" alt="Anya Surprised" class="icon">
-      </div>
       <button class="button" onclick="celebrate()">Celebrate</button>
+      
+      <!-- YouTube Video Embed (Hidden Initially) -->
+      <iframe id="ytVideo" width="360" height="200" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="card-footer">
       <p>With love and best wishes,</p>
@@ -99,19 +82,35 @@
     </div>
   </div>
 
+  <!-- Audio file for birthday song (alternative if you have an MP3) -->
+  <audio id="birthdaySong">
+    <source src="https://www2.cs.uic.edu/~i101/SoundFiles/BirthdaySong.mp3" type="audio/mpeg">
+  </audio>
+
   <script>
     function celebrate() {
       document.getElementById('greeting').innerText = 'Happy 22nd Birthday, Aditi! 🎉🎀';
-      
+
       // Updating the birthday message with humor
       const description = document.querySelector('.card-description');
       description.innerHTML = 
         "Congrats, you're officially 22! 🎂🥳 <br><br>" +
         "Welcome to the age of sudden back pain, questioning life choices, and pretending to have your life together! 😂 " +
-        "But don't worry, you're still as awesome as ever. <br><br>" +
+        "But don’t worry, you’re still as awesome as ever. <br><br>" +
         "Have an amazing day filled with laughter, love, and unlimited cake! 🎁🍰✨";
+
+      // Play the birthday song (MP3 must be direct link)
+      const song = document.getElementById('birthdaySong');
+      if (song) {
+        song.play().catch(error => console.log("Autoplay blocked: ", error));
+      }
+
+      // Show and play the YouTube video
+      const video = document.getElementById('ytVideo');
+      video.style.display = "block";
+      video.src = "https://www.youtube.com/embed/QWWCIhRH4gg?autoplay=1&mute=1"; // Mute enabled for autoplay
     }
   </script>
-  
+
 </body>
 </html>
