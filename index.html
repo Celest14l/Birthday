@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Aditi!</title>
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url('https://imgs.search.brave.com/WfUVM8f1it5PYWCplE-Tk8o8bJqCx17DLjmcHqxAhLw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvaGQvYW55/YS1mb3JnZXItZ29v/ZC1wZnAtNGpkZWg4/OGFraThkNjZvYy5q/cGc'); /* Cute Anya Forger image */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      color: white;
+    }
+    .card {
+      width: 100%;
+      max-width: 400px;
+      padding: 2rem;
+      background-color: rgba(255, 192, 203, 0.8); /* Soft pink background */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+      text-align: center;
+      color: #333;
+    }
+    .card-title {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #ff1493;
+    }
+    .card-description {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .icon {
+      height: 2.5rem;
+      width: 2.5rem;
+      margin: 0 0.5rem;
+      color: #ff1493;
+    }
+    .button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      color: white;
+      background-color: #ff1493;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #e75480;
+    }
+    .footer {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+    }
+    .footer p {
+      margin: 0.25rem 0;
+    }
+    .footer .name {
+      color: #ff1493;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="card-header">
+      <div class="card-title" id="greeting">Dear Aditi! </div>
+      <div class="card-description">Three years of friendship and countless memories! Thank you from the bottom of my heart for always understanding me when no one else could.<br> <br>You're the smartest, most amazing person I know, and I truly appreciate you. It's rare to find someone like you, and I'm grateful every day.
+<br><br>
+        Hope you get all the happiness you deserve & have the best day ever! 💖🎂🎁</div>
+    </div>
+    <div class="card-content">
+      <div class="icon-container">
+        <img src="https://imgs.search.brave.com/NHt50D7CJ9wnZkfrgkC89qshOtr9L8WF5B9qqX1UjvM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvMjMvQW55/YS1Gb3JnZXItUE5H/LUhELUlzb2xhdGVk/LnBuZw" alt="Anya Smiling" class="icon">
+        <img src="https://imgs.search.brave.com/qqkyCXizbklQqpm4Ic4OE8vsVTppO-z5Qj5hSP75PMc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvMjMvQW55/YS1Gb3JnZXItUE5H/LVBpYy5wbmc" alt="Anya Excited" class="icon">
+        <img src="https://imgs.search.brave.com/bXExL0DPo_lVxem2OtTbCTBfDu5j-ItjPcemsf0JfV4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/cG5nbWFydC5jb20v/ZmlsZXMvMjMvQW55/YS1Gb3JnZXItUE5H/LUlzb2xhdGVkLUZp/bGUucG5n" alt="Anya Surprised" class="icon">
+      </div>
+      <button class="button" onclick="celebrate()">Celebrate</button>
+    </div>
+    <div class="card-footer">
+      <p>With love and best wishes,</p>
+      <p class="name">Ansshh (hehe)</p>
+    </div>
+  </div>
+
+  <script>
+    function celebrate() {
+      document.getElementById('greeting').innerText = 'Happy 22nd Birthday, Aditi! 🎉🎀';
+      
+      // Updating the birthday message with humor
+      const description = document.querySelector('.card-description');
+      description.innerHTML = 
+        "Congrats, you're officially 22! 🎂🥳 <br><br>" +
+        "Welcome to the age of sudden back pain, questioning life choices, and pretending to have your life together! 😂 " +
+        "But don't worry, you're still as awesome as ever. <br><br>" +
+        "Have an amazing day filled with laughter, love, and unlimited cake! 🎁🍰✨";
+    }
+  </script>
+  
+</body>
+</html>
